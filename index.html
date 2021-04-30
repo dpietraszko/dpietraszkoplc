@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	
+	<title>DP PLC</title>
+	<meta name="description" content="Blog o programowalnym sterowniku logicznym PLC">
+	<meta name="keywords" content="programowanie, PLC, sterownik, safety">
+	<meta name="author" content="Dawid Pietraszko">
+	<meta http-equiv="X-Ua-Compatible" content="IE=edge">
+	
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/fontello.css" type="text/css" />
+	<link rel="stylesheet" href="main.css">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&amp;subset=latin-ext" rel="stylesheet">
+	
+	<!--[if lt IE 9]>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+	<![endif]-->
+	
+</head>
+
+<body>
+
+	<header>
+	
+		<nav class="navbar navbar-dark bg-nav navbar-expand-lg">
+		
+			<a class="navbar-brand" href="index.html">
+				<i class="icon-connectdevelop"></i>
+			DP PLC 
+			</a>
+		
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainmenu" aria-controls="mainmenu" aria-expanded="false" aria-label="Przełącznik nawigacji">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+		
+			<div class="collapse navbar-collapse" id="mainmenu">
+			
+				<ul class="navbar-nav mr-auto">
+				
+					<li class="nav-item active">
+						<a class="nav-link" href="#"> Start </a>
+					</li>
+					
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-expanded="false" id="submenu" aria-haspopup="true"> Siemens </a>
+						
+						<div class="dropdown-menu" aria-labelledby="submenu">
+						
+							<a class="dropdown-item" href="safety.html"> TIA Portal Safety </a>
+							
+							<div class="dropdown-divider"></div>
+							
+							<a class="dropdown-item" href="ET200SP.html"> ET200SP z modułami safety </a>
+							
+							<div class="dropdown-divider"></div>
+							
+							<a class="dropdown-item" href="zawor.html"> Zawór powietrza </a>
+							
+							<div class="dropdown-divider"></div>
+							
+							<a class="dropdown-item" href="grzyb.html"> Wyłącznik awaryjny </a>
+							
+							<div class="dropdown-divider"></div>
+							
+							<a class="dropdown-item" href="drzwi.html"> Drzwi bezpieczeństwa </a>
+							
+							<div class="dropdown-divider"></div>
+							
+							<a class="dropdown-item" href="skaner.html"> Skaner bezpieczeństwa </a>
+							
+							<div class="dropdown-divider"></div>
+							
+							<a class="dropdown-item" href="schemat.html"> Schemat </a>
+						
+						</div>
+						
+					</li>
+					
+					<li class="nav-item">
+						<a class="nav-link disabled" href="#"> O nas </a>
+					</li>
+					
+					<li class="nav-item">
+						<a class="nav-link" href="pomoc.html"> Pomoc </a>
+					</li>
+					
+					<li class="nav-item">
+						<a class="nav-link" href="kontakt.html"> Kontakt </a>
+					</li>
+				
+				</ul>
+				
+				<ul class="list-inline mr-3 my-auto">
+						<li class="list-inline-item ">
+							<a class="fb" href="https://pl-pl.facebook.com/" target="_blank">
+								<i class="icon-facebook"></i>
+							</a>
+						</li>
+						<li class="list-inline-item">
+							<a class="yt" href="https://www.youtube.com/" target="_blank">
+								<i class="icon-youtube"></i>
+							</a>
+						</li>
+						<li class="list-inline-item">
+							<a class="tw" href="https://twitter.com/" target="_blank">
+								<i class="icon-twitter"></i>
+							</a>
+						</li>
+						<li class="list-inline-item">
+							<a class="in" href="https://pl.linkedin.com/" target="_blank">
+								<i class="icon-linkedin"></i>
+							</a>
+						</li>
+				</ul>
+
+				<form class="form-inline">
+				
+					<input class="form-control mr-1" type="search" placeholder="Wyszukaj" aria-label="Wyszukaj">
+					<button class="btn btn-light" type="submit">Znajdź</button>
+				
+				</form>
+			
+			</div>
+		
+		</nav>
+	
+	</header>
+	
+	<main>
+		
+		<article>
+		
+			<div class="container">
+			
+				<div class="row">
+
+					<aside class="row col-12 advertisement mt-3">
+					
+						<div class="col-sm-2">
+					
+							<div class="photo1">
+								<a href="https://new.siemens.com/pl/pl.html" target="_blank"><img src="img/siemens.png" alt="Siemens"></a>
+							</div>
+							
+						</div>
+						
+						<div class="col-sm-2 d-none d-sm-block">
+					
+							<div class="photo2">
+								<a href="https://www.balluff.com/" target="_blank"><img src="img/balluff.png" alt="Balluff"></a>
+							</div>
+						
+						</div>
+						
+						<div class="col-sm-2 d-none d-sm-block">
+					
+							<div class="photo3">
+								<a href="https://www.astor.com.pl/" target="_blank"><img src="img/astor.png" alt="Astor"></a>
+							</div>
+						
+						</div>
+						
+						<div class="col-sm-2 d-none d-sm-block">
+					
+							<div class="photo4">
+								<a href="https://www.relpol.pl/" target="_blank"><img src="img/relpol.png" alt="Relpol"></a>
+							</div>
+						
+						</div>
+						
+						<div class="col-sm-2 d-none d-sm-block">
+					
+							<div class="photo5">
+								<a href="https://www.elmark.com.pl/" target="_blank"><img src="img/elmark.png" alt="Elmark"></a>
+							</div>
+						
+						</div>
+						
+						<div class="col-sm-2 d-none d-sm-block">
+					
+							<div class="photo6">
+								<a href="https://www.rittal.com/pl-pl/" target="_blank"><img src="img/rittal.png" alt="Rittal"></a>
+							<</div>
+						
+						</div>
+									
+					</aside>
+
+					<div class="col-lg-8 bg-white text-body p-4 wpis">
+					
+						<header>
+						
+							<h1 class="h2 font-weight-bold ml-0 mb-4 text-center text-md-left">Programowalny sterownik logiczny</h1>
+							
+						</header>				
+
+						<p>Uniwersalne urządzenie mikroprocesorowe przeznaczone do sterowania pracą maszyny lub urządzenia technologicznego. PLC musi zostać dopasowany do określonego obiektu sterowania poprzez wprowadzenie do jego pamięci żądanego algorytmu działania obiektu. Cechą charakterystyczną programowalnych sterowników logicznych, odróżniającą je od innych sterowników komputerowych, jest cykliczny obieg pamięci programu.</p>
+
+						<p>Algorytm jest zapisywany w przeznaczonym dla sterownika języku programowania. Istnieje możliwość zmiany algorytmu przez zmianę zawartości pamięci programu. Sterownik wyposaża się w odpowiednią liczbę układów wejściowych zbierających informacje o stanie obiektu i żądaniach obsługi oraz odpowiednią liczbę i rodzaj układów wyjściowych połączonych z elementami wykonawczymi, sygnalizacyjnymi lub transmisji danych.</p>
+						
+						<img class="img-thumbnail mb-3 d-block mx-auto" src="img/simatic-s7-1200-plc.jpg" alt="s7-1200">
+						
+						<h2 class="h3 font-weight-bold mb-4">Zasada działania</h2>
+
+						<p>Podstawową zasadą pracy sterowników jest praca cykliczna, w której sterownik wykonuje kolejno po sobie pojedyncze rozkazy programu w takiej kolejności, w jakiej są one zapisane w programie. Na początku każdego cyklu program odczytuje „obraz” stanu wejść sterownika i zapisuje ich stany (obraz wejść procesu). Po wykonaniu wszystkich rozkazów i określeniu (wyliczeniu) aktualnego dla danej sytuacji stanu wyjść, sterownik wpisuje stany wyjść do pamięci będącej obrazem wyjść procesu a system operacyjny wysterowuje odpowiednie wyjścia sterujące elementami wykonawczymi. Tak więc wszystkie połączenia sygnałowe spotykają się w układach (modułach) wejściowych sterownika, a program śledzi ich obraz i reaguje zmianą stanów wyjść w zależności od algorytmu.</p>
+						
+						<h2 class="h3 font-weight-bold mb-4">Historia sterowników PLC</h2>
+
+						<p>Do końca lat sześćdziesiątych XX wieku praktycznie wszystkie układy sterowania maszyn i urządzeń, zarówno wykonywane w tradycyjnej technice przekaźnikowo-stycznikowej jak i w technice półprzewodnikowej, były konstruowane jako sztywna sieć logiczna. Rolę programu spełniało okablowanie pomiędzy stycznikami, przekaźnikami oraz innymi elementami specjalnymi. Całość była instalowana w szafach sterowniczych. W roku 1968 inżynierowie amerykańskiego przemysłu samochodowego wyszli z inicjatywą wprowadzenia sterowania nowego typu, w którym algorytm działania zapisywany byłby nie w „odrutowaniu” lecz w pamięci. W roku 1970 na wystawie obrabiarek w Chicago przedstawiono pierwszy system sterowania działający na zasadzie cyklicznego obiegu pamięci programu. System pozwalał realizować różnorodne zadania sterownicze przy zachowaniu niezmiennej części sprzętowej – tylko przez zmiany zawartości pamięci programu. W końcu roku 1973 oszacowano, że w USA w przemyśle obróbki metali było ponad 3000 sterowników PLC. W Republice Federalnej Niemiec w roku 1976 było zainstalowanych około 1000 sterowników PLC, na tym rynku w tym czasie oferowało swe sterowniki 43 producentów.</p>
+
+						<p>W Polsce pod koniec lat siedemdziesiątych XX wieku było zainstalowanych kilkaset zestawów sterowników PLC sprowadzonych albo łącznie z importowanymi maszynami czy urządzeniami albo zakupionych dla obiektów zaprojektowanych i wyprodukowanych w kraju. W roku 1977 Zakłady Automatyki Przemysłowej MERA ZAP w Ostrowie Wielkopolskim podjęły produkcję pierwszego w Polsce systemu sterowania programowalnego (sterownika PLC) o nazwie INTELSTER PC4K. Był to sterownik produkowany na licencji zachodnioniemieckiej firmy PILZ GmbH. </p>
+					
+					</div>
+					
+					<aside class="col-lg-4 ad bg-white text-body p-4">
+						<p>Główny partner:</p>
+						<div class= "photo7">
+							<a href="https://iautomatyka.pl/" target="_blank"><img class="img-thumbnail" src="img/iAutomatyka.jpg" alt="iAutomatyka"></a>
+						</div>
+						
+						<h3 class="h4 my-3">Mapa serwisu</h3>
+							<ol class="list-unstyled ml-4">
+								<li>Strona główna</li>
+								<ul>
+									<li>TIA Portal Safety</li>					
+									<li>ET200SP z modułami safety</li>	
+									<li>Zawór powietrza</li>									
+									<li>Wyłącznik awaryjny</li>						
+									<li>Drzwi bezpieczeństwa</li>	
+									<li>Skaner bezpieczeństwa</li>
+									<li>Schemat</li>
+								</ul>
+								<li>O nas</li>						
+								<li>Pomoc</li>												
+								<li>Kontakt</li>				
+							</ol>
+					
+					</aside>
+
+				</div>
+			
+			</div>
+		
+		</article>
+		
+	</main>
+	
+	<footer class="col-12 bg-footer text-center p-3">
+			Dawid Pietraszko! &copy; 2020 Dziękuję za wizytę! Wszelkie prawa zastrzeżone
+	</footer>
+	
+	<script src="jquery-1.11.3.min.js"></script>
+	
+	<script>
+
+		$(document).ready(function() {
+		var NavY = $('.navbar').offset().top;
+		 
+		var stickyNav = function(){
+		var ScrollY = $(window).scrollTop();
+			  
+		if (ScrollY > NavY) { 
+			$('.navbar').addClass('sticky');
+		} else {
+			$('.navbar').removeClass('sticky'); 
+		}
+		};
+		 
+		stickyNav();
+		 
+		$(window).scroll(function() {
+			stickyNav();
+		});
+		});
+		
+	</script>
+	
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+	
+	<script src="js/bootstrap.min.js"></script>
+	
+</body>
+</html>

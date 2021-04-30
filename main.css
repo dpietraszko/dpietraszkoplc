@@ -1,0 +1,230 @@
+body
+{
+	background-color: #ffffff;
+	color: #efefef;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 17px;
+}
+
+.navbar
+{
+	min-height: 57px;
+}
+
+.bg-nav
+{
+	background-color: #434859 !important;
+}
+
+.fb i
+{
+	color: #fff;
+	text-decoration: none;
+}
+
+.fb:hover
+{
+	background-color: #4668b3;
+}
+
+.yt i
+{
+	color: #fff;
+	text-decoration: none;
+}
+
+.yt:hover
+{
+	background-color: #d94348;
+}
+
+.tw i
+{
+	color: #fff;
+	text-decoration: none;
+}
+
+.tw:hover
+{
+	background-color: #3095d3;
+}
+
+.in i
+{
+	color: #fff;
+	text-decoration: none;
+}
+
+.in:hover
+{
+	background-color: #3095d3;
+}
+
+.advertisement img
+{
+	width: 100%;
+	height: auto;
+}
+
+.photo1
+{
+	overflow: hidden;
+}
+
+.photo1 img
+{
+	transition: all 0.5s ease-in-out;
+
+}
+
+.photo1:hover img
+{
+	-webkit-transform: scale(1.15);
+	-ms-transform: scale(1.15);
+	transform: scale(1.15);
+}
+
+.photo2
+{
+	overflow: hidden;
+}
+
+.photo2 img
+{
+	transition: all 0.5s ease-in-out;
+}
+
+.photo2:hover img
+{
+	-webkit-transform: scale(1.15);
+	-ms-transform: scale(1.15);
+	transform: scale(1.15);
+}
+
+.photo3
+{
+	overflow: hidden;
+}
+
+.photo3 img
+{
+	transition: all 0.5s ease-in-out;
+}
+
+.photo3:hover img
+{
+	-webkit-transform: scale(1.15);
+	-ms-transform: scale(1.15);
+	transform: scale(1.15);
+}
+
+.photo4
+{
+	overflow: hidden;
+}
+
+.photo4 img
+{
+	transition: all 0.5s ease-in-out;
+}
+
+.photo4:hover img
+{
+	-webkit-transform: scale(1.15);
+	-ms-transform: scale(1.15);
+	transform: scale(1.15);
+}
+
+.photo5
+{
+	overflow: hidden;
+}
+
+.photo5 img
+{
+	transition: all 0.5s ease-in-out;
+}
+
+.photo5:hover img
+{
+	-webkit-transform: scale(1.15);
+	-ms-transform: scale(1.15);
+	transform: scale(1.15);
+}
+
+.photo6
+{
+	overflow: hidden;
+}
+
+.photo6 img
+{
+	transition: all 0.5s ease-in-out;
+}
+
+.photo6:hover img
+{
+	-webkit-transform: scale(1.15);
+	-ms-transform: scale(1.15);
+	transform: scale(1.15);
+}
+
+.photo7
+{
+	transition: all 0.2s ease-in-out;
+}
+
+.photo7:hover
+{
+	-webkit-transform: scale(0.95);
+	-ms-transform: scale(0.95);
+	transform: scale(0.95);
+}
+
+.ad p
+{
+	font-size: 16px;
+	color: #cccddd;
+}
+
+.ad img
+{
+	width: 100%;
+	height: auto;
+}
+
+.wpis
+{
+	text-align: justify;
+	font-size: 16px;
+	padding: 30px;
+	margin-bottom: 40px;
+}
+
+.sticky
+{
+	width: 100%;
+	position: fixed;
+	left: 0;
+	top: 0;
+	z-index: 100;
+}
+
+.screen
+{
+	transition: all 0.5s ease-in-out;
+}
+
+.screen:hover
+{
+	-webkit-transform: scale(1.7);
+	-ms-transform: scale(1.7);
+	transform: scale(1.7);
+}
+
+.bg-footer
+{
+	background-color: #434859 !important;
+}
+
+

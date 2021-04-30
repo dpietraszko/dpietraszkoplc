@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	
+	<title>DP PLC</title>
+	<meta name="description" content="Blog o programowalnym sterowniku logicznym PLC">
+	<meta name="keywords" content="programowanie, PLC, sterownik, safety">
+	<meta name="author" content="Dawid Pietraszko">
+	<meta http-equiv="X-Ua-Compatible" content="IE=edge">
+	
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/fontello.css" type="text/css" />
+	<link rel="stylesheet" href="main.css">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&amp;subset=latin-ext" rel="stylesheet">
+	
+	<!--[if lt IE 9]>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+	<![endif]-->
+	
+</head>
+
+<body>
+
+	<header>
+	
+		<nav class="navbar navbar-dark bg-nav navbar-expand-lg">
+		
+			<a class="navbar-brand" href="index.html">
+				<i class="icon-connectdevelop"></i>
+			DP PLC 
+			</a>
+		
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainmenu" aria-controls="mainmenu" aria-expanded="false" aria-label="Przełącznik nawigacji">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+		
+			<div class="collapse navbar-collapse" id="mainmenu">
+			
+				<ul class="navbar-nav mr-auto">
+				
+					<li class="nav-item">
+						<a class="nav-link" href="index.html"> Start </a>
+					</li>
+					
+					<li class="nav-item dropdown active">
+						<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-expanded="false" id="submenu" aria-haspopup="true"> Siemens </a>
+						
+						<div class="dropdown-menu" aria-labelledby="submenu">
+						
+							<a class="dropdown-item" href="safety.html"> TIA Portal Safety </a>
+							
+							<div class="dropdown-divider"></div>
+							
+							<a class="dropdown-item active" href="#"> ET200SP z modułami safety </a>
+							
+							<div class="dropdown-divider"></div>
+							
+							<a class="dropdown-item" href="zawor.html"> Zawór powietrza </a>
+							
+							<div class="dropdown-divider"></div>
+							
+							<a class="dropdown-item" href="grzyb.html"> Wyłącznik awaryjny </a>
+							
+							<div class="dropdown-divider"></div>
+							
+							<a class="dropdown-item" href="drzwi.html"> Drzwi bezpieczeństwa </a>
+							
+							<div class="dropdown-divider"></div>
+							
+							<a class="dropdown-item" href="skaner.html"> Skaner bezpieczeństwa </a>
+							
+							<div class="dropdown-divider"></div>
+							
+							<a class="dropdown-item" href="schemat.html"> Schemat </a>
+						
+						</div>
+						
+					</li>
+					
+					<li class="nav-item">
+						<a class="nav-link disabled" href="#"> O nas </a>
+					</li>
+					
+					<li class="nav-item">
+						<a class="nav-link" href="pomoc.html"> Pomoc </a>
+					</li>
+					
+					<li class="nav-item">
+						<a class="nav-link" href="kontakt.html"> Kontakt </a>
+					</li>
+				
+				</ul>
+				
+				<ul class="list-inline mr-3 my-auto">
+						<li class="list-inline-item ">
+							<a class="fb" href="https://pl-pl.facebook.com/" target="_blank">
+								<i class="icon-facebook"></i>
+							</a>
+						</li>
+						<li class="list-inline-item">
+							<a class="yt" href="https://www.youtube.com/" target="_blank">
+								<i class="icon-youtube"></i>
+							</a>
+						</li>
+						<li class="list-inline-item">
+							<a class="tw" href="https://twitter.com/" target="_blank">
+								<i class="icon-twitter"></i>
+							</a>
+						</li>
+						<li class="list-inline-item">
+							<a class="in" href="https://pl.linkedin.com/" target="_blank">
+								<i class="icon-linkedin"></i>
+							</a>
+						</li>
+				</ul>
+
+				<form class="form-inline">
+				
+					<input class="form-control mr-1" type="search" placeholder="Wyszukaj" aria-label="Wyszukaj">
+					<button class="btn btn-light" type="submit">Znajdź</button>
+				
+				</form>
+			
+			</div>
+		
+		</nav>
+	
+	</header>
+	
+	<main>
+		
+		<article>
+		
+			<div class="container">
+			
+				<div class="row">
+
+					<aside class="row col-12 advertisement mt-3">
+					
+						<div class="col-sm-2">
+					
+							<div class="photo1">
+								<a href="https://new.siemens.com/pl/pl.html" target="_blank"><img src="img/siemens.png" alt="Siemens"></a>
+							</div>
+							
+						</div>
+						
+						<div class="col-sm-2 d-none d-sm-block">
+					
+							<div class="photo2">
+								<a href="https://www.balluff.com/" target="_blank"><img src="img/balluff.png" alt="Balluff"></a>
+							</div>
+						
+						</div>
+						
+						<div class="col-sm-2 d-none d-sm-block">
+					
+							<div class="photo3">
+								<a href="https://www.astor.com.pl/" target="_blank"><img src="img/astor.png" alt="Astor"></a>
+							</div>
+						
+						</div>
+						
+						<div class="col-sm-2 d-none d-sm-block">
+					
+							<div class="photo4">
+								<a href="https://www.relpol.pl/" target="_blank"><img src="img/relpol.png" alt="Relpol"></a>
+							</div>
+						
+						</div>
+						
+						<div class="col-sm-2 d-none d-sm-block">
+					
+							<div class="photo5">
+								<a href="https://www.elmark.com.pl/" target="_blank"><img src="img/elmark.png" alt="Elmark"></a>
+							</div>
+						
+						</div>
+						
+						<div class="col-sm-2 d-none d-sm-block">
+					
+							<div class="photo6">
+								<a href="https://www.rittal.com/pl-pl/" target="_blank"><img src="img/rittal.png" alt="Rittal"></a>
+							<</div>
+						
+						</div>
+									
+					</aside>
+
+					<div class="col-lg-8 bg-white text-body p-4 wpis">
+					
+						<header>
+						
+							<h1 class="h2 font-weight-bold ml-0 mb-4 text-center text-md-left">Konfiguracja stacji ET 200SP dla PROFINET</h1>
+							
+						</header>
+
+						<img class="img-fluid mb-3 d-block mx-auto" src="img/ET200SP_Konfiguracja.png" alt="Konfiguracja ET 200SP">
+
+						<p>1. W projekcie kliknij na zakładkę „Network view”.</p>
+						<p>2. W katalogu urządzeń wpisz w pole wyszukiwarki „IM155-6 PN” i rozpocznij szukanie [Enter].</p>
+						<p>3. 3W wynikach wyszukiwania kliknij na moduł interfejsu o numerze 6ES7155-6AU00-0BN0.</p>
+						<p>4. W części informacyjnej modułu (Information) kliknij na kontrolkę wyboru i wskaż właściwą wersję firmware twojego interfejsu.</p>
+						<p>5. Przeciągnij moduł o numerze 6ES7155-6AU00-0BN0 z katalogu (Catalog) do przestrzeni graficznej konfiguracji sieci urządzeń (Network view).</p>
+						<p>6. Kliknij na interfejsie PROFINET modułu IM155-6 PN ST i przeciągnij go do interfejsu F-CPU - powstanie linia symbolizująca połączenie PROFINET.</p>
+						<p>Wynik: Pomiędzy F-CPU a „IM155-6 PN ST” zostało utworzone połączenie PROFINET z automatycznym przypisaniem zależności, nazw oraz adresów IP. Następne moduły „IM155-6 PN-HF” w celu zrealizowania bezpieczeństwa celi, zostały dodane do projektu analogicznie.</p>
+						<br></br>
+
+						<h2 class="h3 font-weight-bold mb-4">Wyszukiwanie ET 200SP w sieci PROFINET</h2>
+						
+						<img class="screen img-fluid mb-3" src="img/Wyszukiwanie ET 200SP w sieci PROFINET.png" alt="Wyszukiwanie ET 200SP w sieci PROFINET">
+
+						<p>Urządzenia ET 200SP oraz inne urząrzenia w sieci PROFINET należy wyszkać i je zidentyfikować w celu poprawnego działania systemu. Należy nadać urządzeniom odpowiednie nazwy i adresy IP takie jak zostały podane w schemacie elektrycznym do projektu.</p>
+						<br></br>
+						
+						<h2 class="h3 font-weight-bold mb-4">Identyfikacja modułów ET 200SP i nadanie adresów PROFIsafe - Opis</h2>
+
+						<p> Komunikacja PROFIsafe bazuje na dwóch typach adresów: adresy źródłowe (F-source address) nadawane masterom komunikacji (F-Host) oraz adresach urządzeń (F-destination address) nadawanym wszystkim podrzędnym urządzeniom bezpieczeństwa znajdującym się w podsieci PN (lub DP). Każdy moduł F-I/O musi posiadać unikalny adres PROFIsafe. Adresy PROFIsafe F-CPU muszą być unikalne w globalnej sieci systemu, adresy modułów F muszą być unikalne w obrębie podsieci F-CPU. Warunek ten jest spełniony gdy:</p>
+						<p>● Adres źródłowy (parametr „Basis for PROFIsafe addresses”) F-CPU jest unikalny w globalnej sieci systemowej (np. zakładu).</p>
+						<p>● Adres urządzenia (F-destination address) modułu/urządzenia F jest unikalny w obrębie podsieci F-CPU.</p>
+						
+						<img class="screen img-fluid mb-3" src="img/str. 31 – identyfikacja urządzeń dla ET200SP_1.png" alt="Identyfikacja i nadanie adresów PROFIsafe modułów safety urządzenia ET200SP">
+						
+						<p> W przykładzie pozostaw adresy PROFIsafe przypisane automatycznie przez F-system. Moduł jest gotowy do nadania adresu (F-destination), kiedy jego wszystkie diody świecą w kolorze czerwonym. Przypisz adres wykonując czynności jak niżej:</p>
+						<p>1. Otwórz widok stacji ET 200SP w „Network view”. Kliknij na stację.</p>
+						<p>2. W skróconym menu (klik prawy przycisk myszki) wybierz komendę „Assign F-destination address”.</p>
+						<p>3. Wybierz metodę którą użyjesz do identyfikacji modułu F (Identyfication):</p>
+						<p>–– przez mrugający LED (by LED flashing). Jest to nastawa domyślna. Podczas identyfikacji dioda STATUS na module F mruga.</p>
+						<p>–– przez numer seryjny „by serial number”. Jeśli nie możesz widzieć moduł F, możesz zidentyfikować go przez numer seryjny interfejsu.</p>
+						<p>4. W kolumnie „Assign” wybierz moduł F, któremu chcesz nadać F-destination adres. Jeśli wybierzesz moduł interfejsu w kolumnie „Assign” zostaną wybrane wszystkie moduły F znajdujące się w stacji.</p>
+						<p>5. Kliknij na przycisk identyfikacji (Identification). Sprawdź czy mrugają kolorem zielonym diody statusu właściwego modułu tj. któremu chcesz przypisać adres. Jeśli identyfikujesz używając numer seryjny, porównaj wyświetlony numer seryjny z numerem seryjnym modułu interfejsu.</p>
+						<p>6. Potwierdź prawidłową identyfikację modułu F w kolumnie „Confirm” tabeli.</p>
+						<p>7. Użyj przycisk przypisania adresu (Assign F-destination) aby przypisać modułowi F adres. W ciągu 60 sekund musisz potwierdzić poprawność akcji przyciskiem „Confirm Assignment”.</p>
+						<p>8. Zamknij okno dialogowe. Patrz poniżej.</p>
+
+						<img class="screen img-fluid mb-3" src="img/str. 31 – identyfikacja urządzeń dla ET200SP_3_inny moduł et200s.png" alt="Identyfikacja i nadanie adresów PROFIsafe modułów safety urządzenia ET200SP">
+						
+						<img class="screen img-fluid mb-3" src="img/Identyfikacja i nadanie adresów PROFIsafe modułów safety urządzenia ET200SP.png" alt="Identyfikacja i nadanie adresów PROFIsafe modułów safety urządzenia ET200SP">
+						
+						<br></br>
+						<br></br>
+						
+						<p class="font-weight-bold">Poniżej została przedstawiona cała identyfikacja modułu safety dla ET 200SP</p>
+						
+						<p>Identyfikacja modułów safety ET 200SP. Prawy przycisk myszy i zakładka „Assign PROFIsafe address”.</p>
+						<img class="screen img-fluid mb-3" src="img/2720A1/Identyfikacja modułów.png" alt="Identyfikacja modułów">
+						
+						<p>Identyfikacja modułów safety ET 200SP za pomocą przycisku „Identyfication”.</p>
+						<img class="screen img-fluid mb-3" src="img/2720A1/Identyfikacja pokolei moduów ET200SP.png" alt="Identyfikacja pokoleji modułów ET200SP">
+						
+						<p>Identyfikacja modułu odbywa się za pomocą migających diód na module. Moża określić który moduł jest zidentyfikowany.</p>
+						<img class="screen img-fluid mb-3" src="img/2720A1/Identyfikacja pokolei moduów ET200SP - Potwierdzenie modułu - miganie zdjęcie.png" alt="Identyfikacja pokoleji modułów ET200SP - Potwierdzenie modułu - miganie">
+						
+						<p>Potwierdzenie zidentyfikowanego modułu safety odbywa się za pomocą przycisku „Assign PROFIsafe address”.</p>
+						<img class="screen img-fluid mb-3" src="img/2720A1/Identyfikacja pokolei moduów ET200SP - Potwierdzenie modułu.png" alt="Identyfikacja pokoleji modułów ET200SP - Potwierdzenie modułu">
+						
+						<p>Poniżej przedstawiono dobrze zidentyfikowany i potwierdzony moduł safety.</p>
+						<img class="screen img-fluid mb-3" src="img/2720A1/Identyfikacja pokolei moduów ET200SP - moduł potwierdzony.png" alt="Identyfikacja pokoleji modułów ET200SP - moduł potwierdzony">
+						
+						<p>Poniżej przedstawiono dobrze zidentyfikowane i potwierdzone moduł safety urządzenia ET 200SP.</p>
+						<img class="screen img-fluid mb-3" src="img/2720A1/Identyfikacja modułów - wszystkie moduły potwierdzone dla ET200SP 2720A1.png" alt="Identyfikacja modułów - wszystkie moduły potwierdzone dla ET200SP 2720A1">
+						
+							<h2 class="h3 font-weight-bold mb-4">Program safety główny - Main</h2>
+						
+						<p>Poniżej został przedstawiony program główny safety PLC gdzie są wywoływane bloki funkcji oraz przedstawiono reintegracje modułów po wystąpieniu zdarzenia niebezpicznego, czyli potwierdzenie modułu po wystąpieniu niebezpieczeństwa.</p>
+						<img class="screen img-fluid mb-3" src="img/2720A1/Main.png" alt="Program safety PLC Main">
+						<img class="screen img-fluid mb-3" src="img/2720A1/Reintegration 1.png" alt="Program safety PLC Main">
+						<img class="screen img-fluid mb-3" src="img/2720A1/Reintegration 2.png" alt="Program safety PLC Main">
+						<img class="screen img-fluid mb-3" src="img/2720A1/Reintegration 3.png" alt="Program safety PLC Main">
+						
+						<p>Program safty PLC w całości można zobaczyć w projekcie "AP0071-PLC001-V100" od Celi nr 9 w TIA Portal. </p>
+
+					</div>
+					
+					<aside class="col-lg-4 ad bg-white text-body p-4">
+						<p>Główny partner:</p>
+						<div class= "photo7">
+							<a href="https://iautomatyka.pl/" target="_blank"><img class="img-thumbnail" src="img/iAutomatyka.jpg" alt="iAutomatyka"></a>
+						</div>
+						
+						<h3 class="h4 my-3">Mapa serwisu</h3>
+							<ol class="list-unstyled ml-4">
+								<li>Strona główna</li>
+								<ul>
+									<li>TIA Portal Safety</li>					
+									<li>ET200SP z modułami safety</li>	
+									<li>Zawór powietrza</li>									
+									<li>Wyłącznik awaryjny</li>						
+									<li>Drzwi bezpieczeństwa</li>	
+									<li>Skaner bezpieczeństwa</li>
+									<li>Schemat</li>
+								</ul>
+								<li>O nas</li>						
+								<li>Pomoc</li>												
+								<li>Kontakt</li>				
+							</ol>
+					
+					</aside>
+
+				</div>
+			
+			</div>
+		
+		</article>
+		
+	</main>
+	
+	<footer class="col-12 bg-footer text-center p-3">
+			Dawid Pietraszko! &copy; 2020 Dziękuję za wizytę! Wszelkie prawa zastrzeżone
+	</footer>
+	
+	<script src="jquery-1.11.3.min.js"></script>
+	
+	<script>
+
+		$(document).ready(function() {
+		var NavY = $('.navbar').offset().top;
+		 
+		var stickyNav = function(){
+		var ScrollY = $(window).scrollTop();
+			  
+		if (ScrollY > NavY) { 
+			$('.navbar').addClass('sticky');
+		} else {
+			$('.navbar').removeClass('sticky'); 
+		}
+		};
+		 
+		stickyNav();
+		 
+		$(window).scroll(function() {
+			stickyNav();
+		});
+		});
+		
+	</script>
+	
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+	
+	<script src="js/bootstrap.min.js"></script>
+	
+</body>
+</html>

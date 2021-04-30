@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	
+	<title>DP PLC</title>
+	<meta name="description" content="Blog o programowalnym sterowniku logicznym PLC">
+	<meta name="keywords" content="programowanie, PLC, sterownik, safety">
+	<meta name="author" content="Dawid Pietraszko">
+	<meta http-equiv="X-Ua-Compatible" content="IE=edge">
+	
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/fontello.css" type="text/css" />
+	<link rel="stylesheet" href="main.css">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&amp;subset=latin-ext" rel="stylesheet">
+	
+	<!--[if lt IE 9]>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+	<![endif]-->
+	
+</head>
+
+<body>
+
+	<header>
+	
+		<nav class="navbar navbar-dark bg-nav navbar-expand-lg">
+		
+			<a class="navbar-brand" href="index.html">
+				<i class="icon-connectdevelop"></i>
+			DP PLC 
+			</a>
+		
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainmenu" aria-controls="mainmenu" aria-expanded="false" aria-label="Przełącznik nawigacji">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+		
+			<div class="collapse navbar-collapse" id="mainmenu">
+			
+				<ul class="navbar-nav mr-auto">
+				
+					<li class="nav-item">
+						<a class="nav-link" href="index.html"> Start </a>
+					</li>
+					
+					<li class="nav-item dropdown active">
+						<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-expanded="false" id="submenu" aria-haspopup="true"> Siemens </a>
+						
+						<div class="dropdown-menu" aria-labelledby="submenu">
+						
+							<a class="dropdown-item" href="safety.html"> TIA Portal Safety </a>
+							
+							<div class="dropdown-divider"></div>
+							
+							<a class="dropdown-item" href="ET200SP.html"> ET200SP z modułami safety </a>
+							
+							<div class="dropdown-divider"></div>
+							
+							<a class="dropdown-item" href="zawor.html"> Zawór powietrza </a>
+							
+							<div class="dropdown-divider"></div>
+							
+							<a class="dropdown-item active" href="#"> Wyłącznik awaryjny </a>
+							
+							<div class="dropdown-divider"></div>
+							
+							<a class="dropdown-item" href="drzwi.html"> Drzwi bezpieczeństwa </a>
+							
+							<div class="dropdown-divider"></div>
+							
+							<a class="dropdown-item" href="skaner.html"> Skaner bezpieczeństwa </a>
+							
+							<div class="dropdown-divider"></div>
+							
+							<a class="dropdown-item" href="schemat.html"> Schemat </a>
+						
+						</div>
+						
+					</li>
+					
+					<li class="nav-item">
+						<a class="nav-link disabled" href="#"> O nas </a>
+					</li>
+					
+					<li class="nav-item">
+						<a class="nav-link" href="pomoc.html"> Pomoc </a>
+					</li>
+					
+					<li class="nav-item">
+						<a class="nav-link" href="kontakt.html"> Kontakt </a>
+					</li>
+				
+				</ul>
+				
+				<ul class="list-inline mr-3 my-auto">
+						<li class="list-inline-item ">
+							<a class="fb" href="https://pl-pl.facebook.com/" target="_blank">
+								<i class="icon-facebook"></i>
+							</a>
+						</li>
+						<li class="list-inline-item">
+							<a class="yt" href="https://www.youtube.com/" target="_blank">
+								<i class="icon-youtube"></i>
+							</a>
+						</li>
+						<li class="list-inline-item">
+							<a class="tw" href="https://twitter.com/" target="_blank">
+								<i class="icon-twitter"></i>
+							</a>
+						</li>
+						<li class="list-inline-item">
+							<a class="in" href="https://pl.linkedin.com/" target="_blank">
+								<i class="icon-linkedin"></i>
+							</a>
+						</li>
+				</ul>
+
+				<form class="form-inline">
+				
+					<input class="form-control mr-1" type="search" placeholder="Wyszukaj" aria-label="Wyszukaj">
+					<button class="btn btn-light" type="submit">Znajdź</button>
+				
+				</form>
+			
+			</div>
+		
+		</nav>
+	
+	</header>
+	
+	<main>
+		
+		<article>
+		
+			<div class="container">
+			
+				<div class="row">
+
+					<aside class="row col-12 advertisement mt-3">
+					
+						<div class="col-sm-2">
+					
+							<div class="photo1">
+								<a href="https://new.siemens.com/pl/pl.html" target="_blank"><img src="img/siemens.png" alt="Siemens"></a>
+							</div>
+							
+						</div>
+						
+						<div class="col-sm-2 d-none d-sm-block">
+					
+							<div class="photo2">
+								<a href="https://www.balluff.com/" target="_blank"><img src="img/balluff.png" alt="Balluff"></a>
+							</div>
+						
+						</div>
+						
+						<div class="col-sm-2 d-none d-sm-block">
+					
+							<div class="photo3">
+								<a href="https://www.astor.com.pl/" target="_blank"><img src="img/astor.png" alt="Astor"></a>
+							</div>
+						
+						</div>
+						
+						<div class="col-sm-2 d-none d-sm-block">
+					
+							<div class="photo4">
+								<a href="https://www.relpol.pl/" target="_blank"><img src="img/relpol.png" alt="Relpol"></a>
+							</div>
+						
+						</div>
+						
+						<div class="col-sm-2 d-none d-sm-block">
+					
+							<div class="photo5">
+								<a href="https://www.elmark.com.pl/" target="_blank"><img src="img/elmark.png" alt="Elmark"></a>
+							</div>
+						
+						</div>
+						
+						<div class="col-sm-2 d-none d-sm-block">
+					
+							<div class="photo6">
+								<a href="https://www.rittal.com/pl-pl/" target="_blank"><img src="img/rittal.png" alt="Rittal"></a>
+							<</div>
+						
+						</div>
+									
+					</aside>
+
+					<div class="col-lg-8 bg-white text-body p-4 wpis">
+					
+						<header>
+						
+							<h1 class="h2 font-weight-bold ml-0 mb-4 text-center text-md-left">Wyłącznik awaryjny</h1>
+							
+						</header>
+
+						<p>Konfiguracja cyfrowych wejść failsafe dla wyłącznika awaryjnego panel PG i wyłącznika awaryjnego panel PL100. Szczegółowe objaśnienia użytych parametrów można znaleźć w pomocy online (STEP7). Podłączenie wejść cyfrowych failsafe można zobaczyć w schemacie w zakładce schemat.</p>
+
+						<img class="img-fluid mb-3" src="img/grzyby/523A1.png" alt="Schemat wyłączniki awaryjne podłączenie">
+
+							<h2 class="h3 font-weight-bold mb-4">Konfiguracja modułów F-DI dla wyłączników awaryjnych</h2>
+						
+						<p>Urządzenie ET200 SP z modułami safety 523A1 do którego podłączone są wyłączniki awaryjne. </p>
+						
+						<img class="img-fluid mb-3 mx-auto" src="img/grzyby/ET200SP - 515A1.png" alt="Urządzenie ET200 SP z modułem safety 523A1">
+						
+						<p class="font-weight-bold">Ustawienie paremetrów kanałów urządzenia ET200 SP modułu 523A1 do którego podłączone są sygnały:</p>
+						
+						<p>● Kanał 0, 4 - wyłącznik awaryjny panel PG przywrócony.</p>
+						<img class="screen img-fluid mb-3" src="img/grzyby/ET200SP - 523A1 - Kanały0, 4 - patrz schemat podłączenie.png" alt="Ustanienie parametrów kanałów 0, 4">
+						<p>Gdy kanały modułu są podłączone, jak w tym przypadku, należy w menu rozwijanym "Sensor evoluation" wybrać "1oo2 evaluation, equivalent" - sygnał sprawdzany dwukanałowo (sygnał sprawdzany jest przez dwa kanały), a także w menu rozwijanym "Sensor supply" wybrać "Sensor supply 0" dla kanału 0 i "Sensor supply 4" dla kanału 4 - zasilanie wewnętrzne (zasilanie kanału jest z modułu 523A1). Kanał musi być zaznaczony "ptaczkiem" Activated - kanał 0, 4.</p>
+						
+						<p>● Kanał 1, 5 - osłona bezpieczeństwa zamknięta i zablokowana.</p>
+						<img class="screen img-fluid mb-3" src="img/grzyby/ET200SP - 523A1 - Kanały1, 5 - patrz schemat podłączenie.png" alt="Ustanienie parametrów kanałów 1, 5">
+						<p>Gdy kanały modułu są podłączone, jak w tym przypadku, należy w menu rozwijanym "Sensor evoluation" wybrać "1oo2 evaluation, equivalent" - sygnał sprawdzany dwukanałowo (sygnał sprawdzany jest przez dwa kanały), a także w menu rozwijanym "Sensor supply" wybrać "External sensor supply" - zasilanie zewnętrze (zasilanie kanału nie jest z modułu 523A1). Kanał musi być zaznaczony "ptaczkiem" Activated - kanał 1, 5.</p>
+						
+						<p>● Kanał 2, 6 - wyłącznik awaryjny panel PL100 przywrócony.</p>
+						<img class="screen img-fluid mb-3" src="img/zawory/ET200SP - 523A1 - Kanały2, 6 - patrz schemat podłączenie.png" alt="Ustanienie parametrów kanałów 2, 6">
+						<p>Gdy kanały modułu są podłączone, jak w tym przypadku, należy w menu rozwijanym "Sensor evoluation" wybrać "1oo2 evaluation, equivalent" - sygnał sprawdzany dwukanałowo (sygnał sprawdzany jest przez dwa kanały), a także w menu rozwijanym "Sensor supply" wybrać "Sensor supply 2" dla kanału 2 i "Sensor supply 6" dla kanału 6 - zasilanie wewnętrzne (zasilanie kanału jest z modułu 523A1). Kanał musi być zaznaczony "ptaczkiem" Activated - kanał 2, 6.</p>
+						
+						<p>● Kanał 3, 7 - Rezerwa (Brak podłączenia sygnałów do kanału).</p>
+						<img class="screen img-fluid mb-3" src="img/grzyby/ET200SP - 532A1 - Kanały3, 7 - patrz schemat podłączenie.png" alt="Ustanienie parametrów kanałów 3, 7">
+						<p>Gdy kanały modułu są nie podłączone, jak w tym przypadku, należy dezaktywować te kanały poprzez odznaczenia "ptaszka" Activated - kanał 3, 7.</p>
+						
+							<h2 class="h3 font-weight-bold mb-4">Program safety dla wyłączników awaryjnych</h2>
+						
+						<p>Poniżej został przedstawiony część programu safety PLC gdzie są wykorzystane wejścia cyfrowe failsafe oraz funkcję dla wyłączników awaryjnych.</p>
+						<img class="screen img-fluid mb-3" src="img/grzyby/Area1 (1).png" alt="Program safety PLC wyłączyniki awaryjne">
+						<img class="screen img-fluid mb-3" src="img/grzyby/Area1 (3).png" alt="Program safety PLC wyłączyniki awaryjne">
+						<img class="screen img-fluid mb-3" src="img/grzyby/Area1 (4).png" alt="Program safety PLC wyłączyniki awaryjne">
+						<img class="screen img-fluid mb-3" src="img/grzyby/Area1 (5).png" alt="Program safety PLC wyłączyniki awaryjne">
+						<img class="screen img-fluid mb-3" src="img/grzyby/Area1 (22).png" alt="Program safety PLC wyłączyniki awaryjne">
+						<img class="screen img-fluid mb-3" src="img/grzyby/Area1 (23).png" alt="Program safety PLC wyłączyniki awaryjne">
+						<img class="screen img-fluid mb-3" src="img/grzyby/Area1 (28).png" alt="Program safety PLC wyłączyniki awaryjne">
+						
+						<p>Program safty PLC w całości można zobaczyć w projekcie "AP0071-PLC001-V100" od Celi nr 9 w TIA Portal. </p>
+
+					</div>
+					
+					<aside class="col-lg-4 ad bg-white text-body p-4">
+						<p>Główny partner:</p>
+						<div class= "photo7">
+							<a href="https://iautomatyka.pl/" target="_blank"><img class="img-thumbnail" src="img/iAutomatyka.jpg" alt="iAutomatyka"></a>
+						</div>
+						
+						<h3 class="h4 my-3">Mapa serwisu</h3>
+							<ol class="list-unstyled ml-4">
+								<li>Strona główna</li>
+								<ul>
+									<li>TIA Portal Safety</li>					
+									<li>ET200SP z modułami safety</li>	
+									<li>Zawór powietrza</li>									
+									<li>Wyłącznik awaryjny</li>						
+									<li>Drzwi bezpieczeństwa</li>	
+									<li>Skaner bezpieczeństwa</li>
+									<li>Schemat</li>
+								</ul>
+								<li>O nas</li>						
+								<li>Pomoc</li>												
+								<li>Kontakt</li>				
+							</ol>
+					
+					</aside>
+
+				</div>
+			
+			</div>
+		
+		</article>
+		
+	</main>
+	
+	<footer class="col-12 bg-footer text-center p-3">
+			Dawid Pietraszko! &copy; 2020 Dziękuję za wizytę! Wszelkie prawa zastrzeżone
+	</footer>
+	
+	<script src="jquery-1.11.3.min.js"></script>
+	
+	<script>
+
+		$(document).ready(function() {
+		var NavY = $('.navbar').offset().top;
+		 
+		var stickyNav = function(){
+		var ScrollY = $(window).scrollTop();
+			  
+		if (ScrollY > NavY) { 
+			$('.navbar').addClass('sticky');
+		} else {
+			$('.navbar').removeClass('sticky'); 
+		}
+		};
+		 
+		stickyNav();
+		 
+		$(window).scroll(function() {
+			stickyNav();
+		});
+		});
+		
+	</script>
+	
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+	
+	<script src="js/bootstrap.min.js"></script>
+	
+</body>
+</html>
